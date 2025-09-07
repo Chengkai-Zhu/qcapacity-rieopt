@@ -15,7 +15,7 @@ This repository provides MATLAB code used to compute the upper and lower bounds 
 
 ## Files
 
-### Lowerbound
+### lowerbound
 
 This folder includes the code for computing a lower bound on the quantum capacity via Riemannian gradient descent algorithm on a product of unitaris.
 
@@ -26,3 +26,8 @@ This folder includes the code for computing a lower bound on the quantum capacit
 - `cohinfo_grad_local.m`: compute the Euclidean gradient in terms of local unitaries.
 
 - `gradient_wrapper.m`: help function to make the gradient struct.
+
+
+### isotropic extension
+
+This folder includes all extensions of qubit isotropic states we found that yield the best-known upper bound on the one-way distillable entanglement.
