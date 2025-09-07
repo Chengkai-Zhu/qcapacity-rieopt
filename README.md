@@ -1,2 +1,2 @@
-# qcapacity-Rieopt
+# qcapacity-rieopt
 MATLAB code for the paper "+++"
