@@ -1,4 +1,12 @@
-function [Xopt, optbound] = GAD_localU(n, dR)
+function [Xopt, optbound] = opt_localU(n, dR, K)
+% Inputs:
+% n: number of copies of the channel
+% dR: dimension of the auxiliary system
+% K: a cell array containing the Kraus operators {K_i} for the channel.
+%
+% Output:
+% Xopt: optimized unitaries
+% optbound: lower bound on Q^{(1)}(N^n)
 
 d = 2;
 % n = 6; % n copies of channels
@@ -7,14 +15,7 @@ d = 2;
 s0 = [1 0;0 0];
 s1 = [0 0;0 1];
 
-% generalized amplitude damping channel
-gamma = 0.44035;
-N = 0.1;
-KAD{1} = sqrt(1-N)*(s0 + sqrt(1-gamma)*s1);
-KAD{2} = sqrt(gamma*(1-N))*[0 1;0 0];
-KAD{3} = sqrt(N)*(sqrt(1-gamma)*s0 + s1);
-KAD{4} = sqrt(gamma*N)*[0 0;1 0];
-KADncopy = NKraus(KAD, n); % Kraus operators of the n-copy depolarizing channel
+K_ncopy = NKraus(K, n); % Kraus operators of the n-copy channel
 
 
 %% define manifold
@@ -28,9 +29,9 @@ elements.R2 = unitaryfactory(dR*d, 1);
 
 problem.M = productmanifold(elements);
 
-problem.cost = @(X) cohinfo_cost_localU(X, n, d, dR, KADncopy);
+problem.cost = @(X) cohinfo_cost_localU(X, n, d, dR, K_ncopy);
 
-problem.egrad = @(X) gradient_wrapper(X, n, d, dR, KADncopy);
+problem.egrad = @(X) gradient_wrapper(X, n, d, dR, K_ncopy);
 
 % check whether the gradient is correct
 % checkgradient(problem)

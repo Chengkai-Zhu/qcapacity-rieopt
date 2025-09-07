@@ -11,3 +11,18 @@ This repository provides MATLAB code used to compute the upper and lower bounds 
 - Manopt
 - cvxquad
 - quantinf
+
+
+## Files
+
+### Lowerbound
+
+This folder includes the code for computing a lower bound on the quantum capacity via Riemannian gradient descent algorithm on a product of unitaris.
+
+- `opt_localU.m`: The main file to do Riemannian gradient descent.
+
+- `cohinfo_cost_local.m`: compute the cost function in terms of local unitaries.
+
+- `cohinfo_grad_local.m`: compute the Euclidean gradient in terms of local unitaries.
+
+- `gradient_wrapper.m`: help function to make the gradient struct.
