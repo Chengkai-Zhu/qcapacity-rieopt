@@ -16,11 +16,22 @@ This repository provides MATLAB code used to compute the upper and lower bounds 
 
 ## Files
 
-### lowerbound
+### D lowerbound
 
-This folder includes the code for computing a lower bound on the quantum capacity via Riemannian gradient descent algorithm on a product of unitaris.
+This folder includes the code for computing a lower bound on the one-way distillable entanglement via Riemannian gradient descent algorithm on a unitary manifold.
 
-- `opt_localU.m`: The main file to do Riemannian gradient descent.
+- `opt_instr.m`: The main function to do Riemannian gradient descent.
+
+- `instr_compute_cost_gradient.m`: compute the cost function and the gradient in terms of the local unitary that parameterize the instrument.
+
+- `ncopy_interleave.m`: prepare the n-copy bipartite state with A^n|B^n partition.
+
+
+### Q lowerbound
+
+This folder includes the code for computing a lower bound on the quantum capacity via Riemannian gradient descent algorithm on a product of unitary manifolds.
+
+- `opt_localU.m`: The main function to do Riemannian gradient descent.
 
 - `cohinfo_cost_local.m`: compute the cost function in terms of local unitaries.
 
@@ -28,6 +39,9 @@ This folder includes the code for computing a lower bound on the quantum capacit
 
 - `gradient_wrapper.m`: help function to make the gradient struct.
 
+### GADC codestates
+
+This folder includes all optimized code states for the generalized amplitude damping channel.
 
 ### isotropic extension
 
