@@ -43,6 +43,6 @@ This folder includes the code for computing a lower bound on the quantum capacit
 
 This folder includes all optimized code states for the generalized amplitude damping channel.
 
-### isotropic extension
+### isotropic extensions
 
 This folder includes all extensions of qubit isotropic states we found that yield the best-known upper bound on the one-way distillable entanglement.
