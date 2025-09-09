@@ -39,6 +39,10 @@ This folder includes the code for computing a lower bound on the quantum capacit
 
 - `gradient_wrapper.m`: help function to make the gradient struct.
 
+### DamDeph codestates
+
+This folder includes all optimized code states for the damping-dephasing channel.
+
 ### GADC codestates
 
 This folder includes all optimized code states for the generalized amplitude damping channel.
