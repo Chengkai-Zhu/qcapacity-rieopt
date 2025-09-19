@@ -1,10 +1,18 @@
-function phi_out = apply_local_unitary(phi_in, U, target_sys, dims)
 % Applies a local two-system unitary U to a state vector phi_in.
 %
+% Input:
 % phi_in: Input state vector.
 % U: The (d*d)x(d*d) unitary matrix.
 % target_sys: A 1x2 vector with the indices of the systems U acts on.
 % dims: A vector of dimensions for all subsystems.
+%
+% Output: the code state.
+%
+% This code is based on Algorithm 3 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
+
+function phi_out = apply_local_unitary(phi_in, U, target_sys, dims)
 
     num_systems = length(dims);
     total_dim = prod(dims);

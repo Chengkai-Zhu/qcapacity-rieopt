@@ -1,15 +1,21 @@
-function [Xopt, optbound] = opt_instr(rhoAB, da, db, dm, n)
+% The main script for optimizing the instrument.
+%
 % Inputs:
-% rhoAB: target state
-% n: number of copies of the state
-% da: dimension of system A
-% da: dimension of system B
-% dm: dimension of system M
+% rhoAB: The target state.
+% n: Number of copies of the state.
+% da: Dimension of the system A.
+% da: Dimension of the system B.
+% dm: Dimension of the classical system M.
 %
 % Output:
-% Xopt: optimimal unitary for the instrument
-% optbound: lower bound on D^{(1)}(rho^n)
+% Xopt: optimimal unitary for the instrument.
+% optbound: lower bound on D^{(1)}(rho^n).
+%
+% This code is based on Algorithm 2 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
 
+function [Xopt, optbound] = opt_instr(rhoAB, da, db, dm, n)
 
 % define Stiefel manifold
 da = d;

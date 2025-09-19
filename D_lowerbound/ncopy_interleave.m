@@ -1,3 +1,15 @@
+% The help function to compute n-copy of the target state
+% System ordering convention: The full Hilbert space is ordered A, then B.
+% Input:
+% rhoAB: The target bipartite state
+% dA: Dimension of the system A
+% dB: Dimension of the system B
+% n: Number of copies
+% 
+% Output: rhoA^nB^n
+% s
+% (c) 2025, Chengkai Zhu.
+
 function rho_grouped = ncopy_interleave(rhoAB, dA, dB, n)
 
     rho_total = 1;
@@ -18,10 +30,4 @@ function rho_grouped = ncopy_interleave(rhoAB, dA, dB, n)
     dims = repmat([dA, dB], 1, n);
 
     rho_grouped = PermuteSystems(rho_total, perm, dims);
-end
-
-
-function CI = CohInfo(state,da,db)
-rho_BF = PartialTrace(state, 1, [da,db]);
-CI = Entropy(rho_BF) - Entropy(state); % coherant information
 end

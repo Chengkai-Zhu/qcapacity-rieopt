@@ -1,17 +1,20 @@
-function [gradR1, gradR2, grad] = cohinfo_grad_localU(X, n, d, dR, K)
 % Computes the Euclidean gradient of the coherent information for a MERA-like circuit.
 %
 % Inputs:
 % X: A (d^2) x (d^2) x (2n-1) array where X(:,:,k) is the k-th local unitary U_k.
-% n: Number of systems in the 'A' part of the chain.
-% d: Dimension of each system in 'A' (e.g., d=2 for qubits).
-% dR: Dimension of the reference system 'R'.
-% K: A cell array containing the Kraus operators {K_i} for the channel.
+% n: Number of systems in the A part of the chain.
+% d: Dimension of each system in A (e.g., d=2 for qubits).
+% dR: Dimension of the auxiliary system R.
+% K: A cell array containing the Kraus operators {K_i} for the n-copy channel.
 %
 % Output:
 % grad: A (d^2) x (d^2) x (2n-1) array of Euclidean gradients for each U_k.
 %
-% Required helper functions: PermuteSystems.m, PartialTrace.m
+% This code is based on Algorithm 3 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
+
+function [gradR1, gradR2, grad] = cohinfo_grad_localU(X, n, d, dR, K)
 
 num_U = 2*n - 1;
 num_systems = n + 1; % Total systems: R, A_1, ..., A_n

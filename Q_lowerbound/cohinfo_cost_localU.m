@@ -1,4 +1,19 @@
-function f = cohinfo_cost_localU(X, n, d, dR, Kncopy)
+% The function for calculating the cost function of channel coherent information
+%
+% Input: 
+% X: A product of unitaries.
+% n: Number of copies of the channel.
+% d: Local dimension of a bipartite state (same dim).
+% dR: Dimension of the auxiliary system.
+% K: A cell array containing the Kraus operators {K_i} for the n-copy channel.
+%
+% Output: The cost function.
+% 
+% This code is based on Algorithm 3 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
+
+function f = cohinfo_cost_localU(X, n, d, dR, K)
 % calculate the coherent information
 num_U = 2*n - 1;
 dims = [dR, repmat(d, 1, n)]; % Vector of dimensions for each system
@@ -24,13 +39,13 @@ end
 phi = kron(X.R2, eye(total_dim/dR/d)) * phi;
 
 rho = 0;
-for i=1:length(Kncopy)
-    IKncopy = kron(eye(dR), Kncopy{i});
-    psi = IKncopy*phi;
+for i=1:length(K)
+    IK = kron(eye(dR), K{i});
+    psi = IK*phi;
     rho = rho + psi*psi';
 end
 
-s = size(Kncopy{1});
+s = size(K{1});
 dout = s(1);
 rho_B = PartialTrace(rho, 1, [dR,dout]);
 cohinfo = Entropy(rho_B) - Entropy(rho);

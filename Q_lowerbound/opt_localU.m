@@ -1,12 +1,19 @@
-function [Xopt, optbound] = opt_localU(n, dR, K)
+% The main script for optimizing the unitaries.
+%
 % Inputs:
-% n: number of copies of the channel
+% n: Number of copies of the channel
 % dR: dimension of the auxiliary system
-% K: a cell array containing the Kraus operators {K_i} for the channel.
+% K: a cell array containing the Kraus operators {K_i} for the n-copy channel.
 %
 % Output:
 % Xopt: optimized unitaries
 % optbound: lower bound on Q^{(1)}(N^n)
+%
+% This code is based on Algorithm 3 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
+
+function [Xopt, optbound] = opt_localU(n, dR, K)
 
 d = 2;
 % n = 6; % n copies of channels

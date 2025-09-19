@@ -1,7 +1,22 @@
+% Computes the cost function in optimizing D^{(1)} over unitary manifold
+% that parameterizes Kraus operators.
+% System ordering convention: The full Hilbert space is ordered A, then B, then M.
+% Input:
+% X: The unitary for instrument.
+% rho_ab: The target bipartite state.
+% dimA: Dimension of the system A.
+% dimB: Dimension of the system B.
+% dimM: Dimension of the classical system M.
+% 
+% Output:
+% cost: the coherent information of the output state.
+% grad_U: the Euclidean gradient w.r.t. the unitary.
+%
+% This code is based on Algorithm 2 in the paper.
+% 
+% (c) 2025, Chengkai Zhu.
+
 function [cost, grad_U] = instr_compute_cost_gradient(X, rho_ab, dimA, dimB, dimM)
-    % Computes the cost function L(U) = S(sigma_B) - S(sigma_AB)
-    %
-    % System Ordering Convention: The full Hilbert space is ordered A, then B, then M.
     
     dimAB = dimA * dimB;
     dimABM = dimA * dimB * dimM;
