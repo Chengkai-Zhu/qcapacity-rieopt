@@ -1,5 +1,7 @@
 # qcapacity-rieopt
 
+[![arXiv](https://img.shields.io/badge/arXiv-2509.15106-b31b1b.svg)](https://arxiv.org/abs/2509.15106)
+
 MATLAB code for the paper 
 
 "Geometric optimization for quantum communication", Chengkai Zhu, Hongyu Mao, Kun Fang, and Xin Wang, [arXiv:2509.15106](https://arxiv.org/abs/2509.15106)
