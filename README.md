@@ -13,8 +13,8 @@ This repository provides MATLAB code used to compute the upper and lower bounds 
 
 - [QETLAB](https://qetlab.com/)
 - [CVX](https://cvxr.com/cvx/)
-- Manopt
-- cvxquad
+- [Manopt](https://www.manopt.org/)
+- [cvxquad](https://github.com/hfawzi/cvxquad)
 - quantinf
 
 
