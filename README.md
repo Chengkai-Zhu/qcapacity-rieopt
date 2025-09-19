@@ -51,6 +51,14 @@ This folder contains all data that yield the upper or lower bounds in the paper,
 
 This folder includes all optimized code states for the damping-dephasing channel.
 
+#### DamDeph extensions
+
+This folder includes all optimized channel extensions for the damping-dephasing channel.
+
+#### DamEra extensions
+
+This folder includes all optimized channel extensions for the damping-erasure channel.
+
 #### GADC codestates
 
 This folder includes all optimized code states for the generalized amplitude damping channel.
