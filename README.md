@@ -11,8 +11,8 @@ This repository provides MATLAB code used to compute the upper and lower bounds 
 
 ## Requirements
 
-- QETLAB
-- CVX
+- [QETLAB](https://qetlab.com/)
+- [CVX](https://cvxr.com/cvx/)
 - Manopt
 - cvxquad
 - quantinf
