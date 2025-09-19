@@ -1,8 +1,10 @@
 # qcapacity-rieopt
 
-MATLAB code for the paper "Geometric optimization for quantum communication"
+MATLAB code for the paper 
 
-This repository provides MATLAB code used to compute the upper and lower bounds on one-way distillable entanglement and quantum capacity based on the Riemannian optimization method developed in the paper ..
+"Geometric optimization for quantum communication", Chengkai Zhu, Hongyu Mao, Kun Fang, and Xin Wang, [arXiv:2509.15106](https://arxiv.org/abs/2509.15106)
+
+This repository provides MATLAB code used to compute the upper and lower bounds on one-way distillable entanglement and quantum capacity based on the Riemannian optimization methods.
 
 
 ## Requirements
@@ -39,14 +41,18 @@ This folder includes the code for computing a lower bound on the quantum capacit
 
 - `gradient_wrapper.m`: help function to make the gradient struct.
 
-### DamDeph codestates
+### data 
+
+This folder contains all data that yield the upper or lower bounds in the paper, including different state and channel extensions as well as code states for different channels.
+
+#### DamDeph codestates
 
 This folder includes all optimized code states for the damping-dephasing channel.
 
-### GADC codestates
+#### GADC codestates
 
 This folder includes all optimized code states for the generalized amplitude damping channel.
 
-### isotropic extensions
+#### isotropic extensions
 
 This folder includes all extensions of qubit isotropic states we found that yield the best-known upper bound on the one-way distillable entanglement.
