@@ -1,6 +1,6 @@
 % The main script for optimizing the instrument.
 %
-% Inputs:
+% Input:
 % rhoAB: The target state.
 % n: Number of copies of the state.
 % da: Dimension of the system A.

@@ -1,6 +1,6 @@
 % The main script for optimizing the unitaries.
 %
-% Inputs:
+% Input:
 % n: Number of copies of the channel
 % dR: dimension of the auxiliary system
 % K: a cell array containing the Kraus operators {K_i} for the n-copy channel.

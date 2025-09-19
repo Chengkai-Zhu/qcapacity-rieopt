@@ -1,6 +1,6 @@
 % Computes the Euclidean gradient of the coherent information for a MERA-like circuit.
 %
-% Inputs:
+% Input:
 % X: A (d^2) x (d^2) x (2n-1) array where X(:,:,k) is the k-th local unitary U_k.
 % n: Number of systems in the A part of the chain.
 % d: Dimension of each system in A (e.g., d=2 for qubits).
